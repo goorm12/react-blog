@@ -1,12 +1,12 @@
 import Footer from "../../component/Footer";
 import Header from "../../component/Header";
-import Main from "../../component/Main";
+import PostList from "../../component/PostList";
 
 const Profile = () => {
   return (
     <div>
       <Header />
-      <Main title={"Profile"} />
+      <PostList title={"Profile"} />
       <Footer />
     </div>
   );

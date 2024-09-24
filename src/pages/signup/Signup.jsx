@@ -1,12 +1,12 @@
 import Footer from "../../component/Footer";
 import Header from "../../component/Header";
-import Main from "../../component/Main";
+import PostList from "../../component/PostList";
 
 const SignUp = () => {
   return (
     <div>
       <Header />
-      <Main title={"회원가입"} />
+      <PostList title={"회원가입"} />
       <Footer />
     </div>
   );

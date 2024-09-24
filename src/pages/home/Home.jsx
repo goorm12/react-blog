@@ -1,12 +1,12 @@
 import Header from "../../component/Header";
 import Footer from "../../component/Footer";
-import Main from "../../component/Main";
+import PostList from "../../component/PostList";
 
 const Home = () => {
   return (
     <div className="Home">
       <Header />
-      <Main />
+      <PostList />
       <Footer />
     </div>
   );
