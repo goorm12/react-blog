@@ -1,0 +1,14 @@
+.Header {
+  width: 100%;
+  min-height: 40px;
+  padding: 40px 0px;
+  background-color: lightblue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Header .header-title > a {
+  color: white;
+}
