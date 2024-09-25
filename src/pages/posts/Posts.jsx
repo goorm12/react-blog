@@ -1,12 +1,25 @@
 import Footer from "../../component/Footer";
 import Header from "../../component/Header";
-import PostList from "../../component/PostList";
+import Button from "../../component/Button";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Posts = () => {
+  const { user, handleLogout } = useAuth();
+  const nav = useNavigate();
+
+  const handleLogoutAndLogin = async () => {
+    await handleLogout();
+    nav("/login", { replace: true });
+  };
+
   return (
     <div>
-      <Header />
-      <PostList title={"Posts"} />
+      <Header
+        rightChild={<Button onClick={handleLogoutAndLogin} text={"로그아웃"} />}
+      />
+
       <Footer />
     </div>
   );
