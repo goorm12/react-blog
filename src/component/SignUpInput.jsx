@@ -55,7 +55,7 @@ const SignUpInput = () => {
             name="email-input"
             id="email-input"
             placeholder="이메일을 입력하세요"
-            autoComplete="new-username"
+            autoComplete="off"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -71,7 +71,7 @@ const SignUpInput = () => {
             id="password-input"
             name="password-input"
             placeholder="비밀번호를 입력하세요"
-            autoComplete="new-password"
+            autoComplete="off"
             onChange={(e) => {
               setPassword(e.target.value);
               if (!passwordRegex.test(password)) {
@@ -93,7 +93,7 @@ const SignUpInput = () => {
             id="password-input-2"
             name="password-input-2"
             placeholder="비밀번호를 다시 입력하세요"
-            autoComplete="new-password"
+            autoComplete="off"
             onChange={(e) => {
               setConfirmPassword(e.target.value);
               if (e.target.value === password) {
