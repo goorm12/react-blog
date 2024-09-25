@@ -48,6 +48,13 @@
   background-color: #a6d3cb;
 }
 
+.submit-button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  border: none;
+}
+
 .SignUpInput .signup-form .login-container {
   display: flex;
   flex-direction: row;
@@ -66,5 +73,10 @@
 .SignUpInput .signup-form .login-container a {
   text-decoration: none;
   color: lightgray;
+  font-size: 14px;
+}
+
+.SignUpInput .errorMessage {
+  color: red;
   font-size: 14px;
 }
