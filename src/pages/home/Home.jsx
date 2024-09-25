@@ -2,30 +2,13 @@ import Header from "../../component/Header";
 import Footer from "../../component/Footer";
 import PostList from "../../component/PostList";
 import { Link } from "react-router-dom";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../../firebaseConfig";
-import { useState, useEffect } from "react";
+
 import Button from "../../component/Button";
 import MySwiper from "../../component/MySwiper";
+import { useAuth } from "../../context/AuthContext";
 
 const Home = () => {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-      } else {
-        setUser(null);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  const handleLogout = async () => {
-    await signOut(auth);
-  };
+  const { user, handleLogout } = useAuth();
   return (
     <div className="Home">
       <Header
