@@ -7,7 +7,6 @@ const Login = () => {
     <div>
       <Header />
       <LoginInput />
-
       <Footer />
     </div>
   );
