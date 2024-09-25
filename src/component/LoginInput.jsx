@@ -21,6 +21,8 @@ const LoginInput = () => {
         password
       );
 
+      console.log(userCredential);
+
       nav("/", { replace: true });
       console.log(userCredential.user);
     } catch (error) {
