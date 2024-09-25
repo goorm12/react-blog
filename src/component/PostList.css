@@ -1,5 +1,9 @@
 .PostList {
-  width: 500px;
+  width: 100%;
+}
 
-  margin: 30px auto;
+.PostList > div {
+  width: 500px;
+  margin: 0 auto;
+  padding: 30px 0px;
 }
