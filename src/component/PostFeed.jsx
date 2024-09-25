@@ -3,7 +3,7 @@ const PostFeed = () => {
   return (
     <div className="PostFeed">
       <div className="postFeed-img">
-        <img src="/src/assets/js.png" alt="javascript" />
+        <img src="/assets/js.png" alt="javascript" />
       </div>
 
       <div className="postFeed-content">
