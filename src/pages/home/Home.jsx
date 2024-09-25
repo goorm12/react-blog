@@ -9,6 +9,7 @@ import { useAuth } from "../../context/AuthContext";
 
 const Home = () => {
   const { user, handleLogout } = useAuth();
+
   return (
     <div className="Home">
       <Header
