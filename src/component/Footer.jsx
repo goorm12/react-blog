@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
-const Footer = () => {
+const Footer = ({ child }) => {
   return (
     <footer className="Footer">
       <nav>
@@ -9,9 +9,7 @@ const Footer = () => {
           <li>
             <Link to={"/posts"}>글 쓰기</Link>
           </li>
-          <li>
-            <Link to={"/login"}>로그인하기</Link>
-          </li>
+          <li>{child}</li>
           <li>
             <button>dark mode</button>
           </li>
