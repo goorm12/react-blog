@@ -1,12 +1,12 @@
 import Footer from "../../component/Footer";
 import Header from "../../component/Header";
-import PostList from "../../component/PostList";
+import SignUpInput from "../../component/SignUpInput";
 
 const SignUp = () => {
   return (
     <div>
       <Header />
-      <PostList title={"회원가입"} />
+      <SignUpInput />
       <Footer />
     </div>
   );
