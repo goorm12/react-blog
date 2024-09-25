@@ -1,14 +1,26 @@
 .Header {
   width: 100%;
   min-height: 40px;
-  padding: 40px 0px;
+  height: 118px;
+  padding: 0px 40px 20px;
   background-color: #87ceeb;
   color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.Header .header-title {
+  display: flex;
   align-items: center;
 }
 
-.Header .header-title > a {
+.Header .header-title > a,
+.Header .span-container > a {
   color: white;
+}
+
+.Header .span-container {
+  display: flex;
+  gap: 10px;
 }
