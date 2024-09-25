@@ -6,6 +6,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import { useState, useEffect } from "react";
 import Button from "../../component/Button";
+import MySwiper from "../../component/MySwiper";
 
 const Home = () => {
   const [user, setUser] = useState(null);
@@ -41,6 +42,11 @@ const Home = () => {
               <Link to={"/posts"}>글쓰기</Link>
             </>
           )
+        }
+        swiperChild={
+          <div className="swiper-content">
+            <MySwiper />
+          </div>
         }
       />
       <PostList />
