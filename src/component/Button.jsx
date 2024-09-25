@@ -1,7 +1,10 @@
+import "./Button.css";
 const Button = ({ onClick, text }) => {
   return (
     <>
-      <button onClick={onClick}>{text}</button>
+      <button onClick={onClick} className="button">
+        {text}
+      </button>
     </>
   );
 };
