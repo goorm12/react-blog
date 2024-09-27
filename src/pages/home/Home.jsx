@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 import Button from "../../component/Button";
 import MySwiper from "../../component/MySwiper";
 import { useAuth } from "../../context/AuthContext";
+import { useTheme } from "../../context/ThemeProvider";
 
 const Home = () => {
   const { user, handleLogout } = useAuth();
+  const { theme } = useTheme("light");
 
   return (
     <div className="Home">
@@ -35,7 +37,7 @@ const Home = () => {
       />
       <PostList />
       <Footer
-        child={
+        userChild={
           user ? (
             <>
               <Button onClick={handleLogout} text={"로그아웃"} />
@@ -45,6 +47,14 @@ const Home = () => {
               <Link to={"/login"}>로그인하기</Link>
             </>
           )
+        }
+        createChild={
+          <Link
+            to={"/posts"}
+            style={{ color: theme === "dark" ? "#fff" : "#000" }}
+          >
+            글 쓰기
+          </Link>
         }
       />
     </div>
