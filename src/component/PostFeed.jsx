@@ -4,7 +4,7 @@ import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import "./PostFeed.css";
 import { db } from "../firebaseConfig";
 import { useEffect, useState } from "react";
-const PostFeed = () => {
+const PostFeed = ({ categoryFilter }) => {
   const { user } = useAuth();
   const [posts, setPosts] = useState([]);
 
@@ -34,9 +34,14 @@ const PostFeed = () => {
     handle();
   }, [user]);
 
+  const filteredPosts =
+    categoryFilter === "All"
+      ? posts
+      : posts.filter((post) => post.category === categoryFilter);
+
   return (
     <div className="PostFeed">
-      {posts.map((post) => {
+      {filteredPosts.map((post) => {
         return (
           <div key={post.id}>
             <div className="postFeed-content">
