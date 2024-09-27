@@ -1,9 +1,30 @@
 .PostList {
   width: 100%;
 }
-
-.PostList > div {
+.postlist-container {
   width: 500px;
   margin: 0 auto;
-  padding: 30px 0px;
+}
+
+.PostList .categories-container > ul {
+  display: flex;
+  gap: 10px;
+}
+
+.PostList .categories-container > ul > li > button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px 10px 10px 0;
+  color: grey;
+}
+
+.PostList .categories-container .active {
+  color: #87ceeb;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.PostList .feed-container {
+  padding: 20px 0;
 }
