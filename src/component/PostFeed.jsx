@@ -1,28 +1,56 @@
+import { useAuth } from "../context/AuthContext";
+import { collection, getDocs } from "firebase/firestore";
 import "./PostFeed.css";
+import { db } from "../firebaseConfig";
+import { useEffect, useState } from "react";
 const PostFeed = () => {
+  const { user } = useAuth();
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const handle = async () => {
+      if (user) {
+        try {
+          const querySnapshot = await getDocs(collection(db, "posts"));
+          const fetchPosts = [];
+
+          querySnapshot.forEach((doc) => {
+            fetchPosts.push({ id: doc.id, ...doc.data() });
+          });
+
+          setPosts(fetchPosts);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+
+    handle();
+  }, [user]);
+
   return (
     <div className="PostFeed">
-      <div className="postFeed-img">
-        <img src="/assets/js.png" alt="javascript" />
-      </div>
+      {posts.map((post) => {
+        return (
+          <div key={post.id}>
+            <div className="postFeed-content">
+              <div className="user-info">
+                <div className="user"></div>
+                <span>{user.email.split("@")[0]}</span>
+                <span>{post.date}</span>
+              </div>
+              <span>{post.title}</span>
 
-      <div className="postFeed-content">
-        <div className="user-info">
-          <div className="user"></div>
-          <span>유저 네임</span>
-          <span>날짜</span>
-        </div>
-        <span>블로그 제목</span>
+              <span className="text-ellipsis">{post.text}</span>
 
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
-        </span>
-
-        <div className="postFeed-button">
-          <button>수정</button>
-          <button>삭제</button>
-        </div>
-      </div>
+              <div className="postFeed-button">
+                <button>수정</button>
+                <button>삭제</button>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
