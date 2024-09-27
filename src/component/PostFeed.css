@@ -1,9 +1,6 @@
-.PostFeed {
+.PostFeed > div {
   width: 500px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  gap: 10px;
+
   margin-bottom: 20px;
   border: 1px solid lightgray;
   border-radius: 5px;
@@ -27,11 +24,10 @@
 }
 
 .PostFeed .postFeed-content {
-  width: 60%;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .PostFeed .postFeed-content .user-info {
@@ -49,4 +45,11 @@
   display: flex;
   justify-content: flex-end;
   gap: 15px;
+}
+
+.PostFeed .text-ellipsis {
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
