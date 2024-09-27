@@ -6,6 +6,7 @@ import Posts from "./pages/posts/Posts";
 import Profile from "./pages/profile/Profile";
 import SignUp from "./pages/signup/Signup";
 import NotFound from "./pages/not-found/NotFoun";
+import MyPage from "./pages/\bmy-page/MyPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/posts" element={<Posts />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/my-page" element={<MyPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
