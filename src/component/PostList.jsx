@@ -11,10 +11,6 @@ const PostList = () => {
     >
       <div>
         <PostFeed />
-        <PostFeed />
-        <PostFeed />
-        <PostFeed />
-        <PostFeed />
       </div>
     </main>
   );
