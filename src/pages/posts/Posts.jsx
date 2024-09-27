@@ -4,6 +4,7 @@ import Button from "../../component/Button";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import CreatePosts from "../../component/CreatePosts";
 
 const Posts = () => {
   const { user, handleLogout } = useAuth();
@@ -19,7 +20,7 @@ const Posts = () => {
       <Header
         rightChild={<Button onClick={handleLogoutAndLogin} text={"로그아웃"} />}
       />
-
+      <CreatePosts />
       <Footer />
     </div>
   );
