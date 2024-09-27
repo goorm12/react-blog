@@ -19,6 +19,12 @@ const Home = () => {
           user ? (
             <>
               <span>{user.email.split("@")[0]}님, 환영합니다!</span>
+              <Link
+                to={"/my-page"}
+                style={{ color: theme === "dark" ? "#fff" : "#000" }}
+              >
+                마이페이지
+              </Link>
               <Button onClick={handleLogout} text={"로그아웃"} />
             </>
           ) : (
