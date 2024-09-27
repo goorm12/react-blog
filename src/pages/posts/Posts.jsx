@@ -3,11 +3,11 @@ import Header from "../../component/Header";
 import Button from "../../component/Button";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+
 import CreatePosts from "../../component/CreatePosts";
 
 const Posts = () => {
-  const { user, handleLogout } = useAuth();
+  const { handleLogout } = useAuth();
   const nav = useNavigate();
 
   const handleLogoutAndLogin = async () => {
