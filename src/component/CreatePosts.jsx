@@ -9,9 +9,33 @@ const CreatePosts = () => {
   const { theme } = useTheme();
   const [titleValue, setTitleValue] = useState("");
   const [categoryValue, setCategoryValue] = useState("");
+
   const [textValue, setTextValue] = useState("");
 
   const nav = useNavigate();
+
+  const categories = [
+    {
+      id: 0,
+      title: "",
+    },
+    {
+      id: 1,
+      title: "Web",
+    },
+    {
+      id: 2,
+      title: "FrontEnd",
+    },
+    {
+      id: 3,
+      title: "React",
+    },
+    {
+      id: 4,
+      title: "Next.js",
+    },
+  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -68,9 +92,13 @@ const CreatePosts = () => {
               setCategoryValue(e.target.value);
             }}
           >
-            <option value="">선택해주세요</option>
-            <option value="프론트엔드">frontend</option>
-            <option value="리액트">react</option>
+            {categories.map((option) => {
+              return (
+                <option value={option.title} key={option.id}>
+                  {option.title}
+                </option>
+              );
+            })}
           </select>
         </div>
 
