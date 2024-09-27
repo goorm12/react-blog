@@ -1,5 +1,6 @@
 import { useAuth } from "../context/AuthContext";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+
 import "./PostFeed.css";
 import { db } from "../firebaseConfig";
 import { useEffect, useState } from "react";
@@ -11,7 +12,12 @@ const PostFeed = () => {
     const handle = async () => {
       if (user) {
         try {
-          const querySnapshot = await getDocs(collection(db, "posts"));
+          const queryOrderBy = query(
+            collection(db, "posts"),
+            orderBy("date", "desc")
+          );
+
+          const querySnapshot = await getDocs(queryOrderBy);
           const fetchPosts = [];
 
           querySnapshot.forEach((doc) => {
