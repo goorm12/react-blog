@@ -4,6 +4,7 @@ import "./CreatePosts.css";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import { categories } from "../utils/categories";
 
 const CreatePosts = () => {
   const { theme } = useTheme();
@@ -13,29 +14,6 @@ const CreatePosts = () => {
   const [textValue, setTextValue] = useState("");
 
   const nav = useNavigate();
-
-  const categories = [
-    {
-      id: 0,
-      title: "",
-    },
-    {
-      id: 1,
-      title: "Web",
-    },
-    {
-      id: 2,
-      title: "FrontEnd",
-    },
-    {
-      id: 3,
-      title: "React",
-    },
-    {
-      id: 4,
-      title: "Next.js",
-    },
-  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,6 +35,10 @@ const CreatePosts = () => {
       console.error("Error adding document: ", e);
     }
   };
+
+  const filteredCategories = categories.filter(
+    (category) => category.title !== "All"
+  );
 
   return (
     <section
@@ -89,7 +71,7 @@ const CreatePosts = () => {
               setCategoryValue(e.target.value);
             }}
           >
-            {categories.map((option) => {
+            {filteredCategories.map((option) => {
               return (
                 <option value={option.title} key={option.id}>
                   {option.title}
