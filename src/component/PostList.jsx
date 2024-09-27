@@ -3,7 +3,7 @@ import PostFeed from "./PostFeed";
 import "./PostList.css";
 
 const PostList = () => {
-  const { theme } = useTheme();
+  const { theme } = useTheme("light");
   return (
     <main
       className="PostList"

@@ -1,7 +1,7 @@
 import { useTheme } from "../context/ThemeProvider";
 import "./Button.css";
 const Button = ({ onClick, text }) => {
-  const { theme } = useTheme();
+  const { theme } = useTheme("light");
   return (
     <>
       <button

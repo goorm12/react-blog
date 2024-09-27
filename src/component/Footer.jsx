@@ -5,7 +5,7 @@ import Button from "./Button";
 import { useTheme } from "../context/ThemeProvider";
 
 const Footer = ({ child }) => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme("light");
   return (
     <footer
       className="Footer"
