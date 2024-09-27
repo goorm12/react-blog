@@ -12,6 +12,11 @@ const CreatePosts = () => {
 
   const [textValue, setTextValue] = useState("");
 
+  // const date = new Date();
+  // const formattedDate = `${date.getFullYear()}.${String(
+  //   date.getMonth() + 1
+  // ).padStart(2, 0)}.${String(date.getDate()).padStart(2, 0)}`;
+
   const nav = useNavigate();
 
   const categories = [
@@ -44,7 +49,7 @@ const CreatePosts = () => {
     );
 
     try {
-      const docRef = await addDoc(collection(db, "users"), {
+      const docRef = await addDoc(collection(db, "posts"), {
         title: titleValue,
         category: categoryValue,
         text: textValue,
