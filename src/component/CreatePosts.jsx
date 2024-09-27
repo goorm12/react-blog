@@ -12,11 +12,6 @@ const CreatePosts = () => {
 
   const [textValue, setTextValue] = useState("");
 
-  // const date = new Date();
-  // const formattedDate = `${date.getFullYear()}.${String(
-  //   date.getMonth() + 1
-  // ).padStart(2, 0)}.${String(date.getDate()).padStart(2, 0)}`;
-
   const nav = useNavigate();
 
   const categories = [
@@ -44,9 +39,6 @@ const CreatePosts = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      `titleValue: ${titleValue} category: ${categoryValue} textValue:${textValue} `
-    );
 
     try {
       const docRef = await addDoc(collection(db, "posts"), {
@@ -119,7 +111,12 @@ const CreatePosts = () => {
           ></textarea>
         </div>
 
-        <button className="create-btn">글 쓰기</button>
+        <button
+          className="create-btn"
+          disabled={!titleValue || !categoryValue || !textValue}
+        >
+          글 쓰기
+        </button>
       </form>
     </section>
   );
