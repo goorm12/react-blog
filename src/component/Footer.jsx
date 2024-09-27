@@ -4,8 +4,9 @@ import "./Footer.css";
 import Button from "./Button";
 import { useTheme } from "../context/ThemeProvider";
 
-const Footer = ({ child }) => {
+const Footer = ({ userChild, createChild }) => {
   const { theme, toggleTheme } = useTheme("light");
+
   return (
     <footer
       className="Footer"
@@ -16,15 +17,8 @@ const Footer = ({ child }) => {
     >
       <nav>
         <ul className="footer-ul">
-          <li>
-            <Link
-              to={"/posts"}
-              style={{ color: theme === "dark" ? "#fff" : "#000" }}
-            >
-              글 쓰기
-            </Link>
-          </li>
-          <li>{child}</li>
+          <li>{createChild}</li>
+          <li>{userChild}</li>
           <li>
             <Button text={"Dark"} onClick={toggleTheme} />
           </li>
